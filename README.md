@@ -16,18 +16,6 @@ Adjustable background color
 ```
 Gif
 
-Adjustable background color
-```
-var fillBackgroundColor:UIColor
-```
-Gif
-
-Adjustable background color
-```
-var fillBackgroundColor:UIColor
-```
-Gif
-
 Adjustable animation cycle duration
 ```
 var animationCycleDuration:Double 
