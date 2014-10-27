@@ -6,13 +6,13 @@ Gif
 
 Adjustable color
 ```
-@IBInspectable var fillColor:UIColor
+var fillColor:UIColor
 ```
 Gif
 
 Adjustable background color
 ```
-@IBInspectable var fillBackgroundColor:UIColor
+var fillBackgroundColor:UIColor
 ```
 Gif
 
@@ -24,7 +24,7 @@ Gif
 
 Adjustable angle
 ```
-@IBInspectable var angle:CGFloat
+var angle:CGFloat
 ```
 Gif
 
