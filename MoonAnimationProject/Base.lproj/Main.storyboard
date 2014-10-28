@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DJm-0p-s2d">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -25,8 +25,36 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillBackgroundColor">
-                                        <color key="value" white="0.0" alpha="0.02" colorSpace="calibratedWhite"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.98048597569999996" green="0.4918122888" blue="0.47019100190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0a-AC-wtY" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="171" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="LqX-gL-FZ7"/>
+                                    <constraint firstAttribute="width" constant="53" id="mzt-xp-L8s"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.98661953209999997" green="0.72013431790000004" blue="0.48146158459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n53-g8-AAN" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="377" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="Ctw-xJ-zBQ"/>
+                                    <constraint firstAttribute="height" constant="52" id="ruv-Vo-gWX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.86436301469999999" green="0.82138270140000003" blue="0.69867110249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -34,12 +62,310 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="DOO-Al-Z1M" secondAttribute="centerX" constant="-0.5" id="7SE-Ll-Gyn"/>
+                            <constraint firstItem="DOO-Al-Z1M" firstAttribute="leading" secondItem="P0a-AC-wtY" secondAttribute="trailing" constant="50" id="QCn-xP-YUw"/>
+                            <constraint firstItem="DOO-Al-Z1M" firstAttribute="centerY" secondItem="n53-g8-AAN" secondAttribute="centerY" id="QyO-lC-4hk"/>
                             <constraint firstAttribute="centerY" secondItem="DOO-Al-Z1M" secondAttribute="centerY" id="o96-KY-2vb"/>
+                            <constraint firstItem="P0a-AC-wtY" firstAttribute="centerY" secondItem="DOO-Al-Z1M" secondAttribute="centerY" id="pAI-RR-NlT"/>
+                            <constraint firstItem="n53-g8-AAN" firstAttribute="leading" secondItem="DOO-Al-Z1M" secondAttribute="trailing" constant="50" id="zM3-HU-uvC"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="303" y="571"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4TF-Mo-0ea">
+            <objects>
+                <viewController id="DJm-0p-s2d" customClass="ViewController" customModule="MoonAnimationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s02-0N-JiH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nfh-L5-fSY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WEb-0Y-ZxW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSd-Ls-lqW" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="274" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="G7P-Ay-W3p"/>
+                                    <constraint firstAttribute="width" constant="53" id="iwp-Cw-yZo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xSd-Ls-lqW" secondAttribute="centerY" id="YkL-Rw-gZV"/>
+                            <constraint firstAttribute="centerX" secondItem="xSd-Ls-lqW" secondAttribute="centerX" constant="-0.5" id="wlO-v6-Rju"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6x-kf-lIE" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="-122"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Lle-Dz-efG">
+            <objects>
+                <viewController id="uya-vb-mCO" customClass="ViewController" customModule="MoonAnimationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bZ8-PS-I9h"/>
+                        <viewControllerLayoutGuide type="bottom" id="K8m-M6-qgD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t7J-mX-weI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1NP-kZ-rLu" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="274" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="7xp-cw-AUs"/>
+                                    <constraint firstAttribute="width" constant="53" id="8FF-3h-k5U"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71S-TA-bbM" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="171" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="0pA-I7-30E"/>
+                                    <constraint firstAttribute="height" constant="52" id="vVC-dw-sEr"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6f-Pn-ahw" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="377" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="UxT-4d-T1m"/>
+                                    <constraint firstAttribute="height" constant="52" id="uEY-Pf-NUF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1NP-kZ-rLu" secondAttribute="centerX" constant="-0.5" id="0a4-iz-p5e"/>
+                            <constraint firstItem="71S-TA-bbM" firstAttribute="centerY" secondItem="1NP-kZ-rLu" secondAttribute="centerY" id="82T-lc-OiI"/>
+                            <constraint firstItem="1NP-kZ-rLu" firstAttribute="leading" secondItem="71S-TA-bbM" secondAttribute="trailing" constant="50" id="QiK-ZT-0ck"/>
+                            <constraint firstItem="1NP-kZ-rLu" firstAttribute="centerY" secondItem="Z6f-Pn-ahw" secondAttribute="centerY" id="g5k-e5-Xft"/>
+                            <constraint firstItem="Z6f-Pn-ahw" firstAttribute="leading" secondItem="1NP-kZ-rLu" secondAttribute="trailing" constant="50" id="ibc-ox-3GX"/>
+                            <constraint firstAttribute="centerY" secondItem="1NP-kZ-rLu" secondAttribute="centerY" id="sRg-Pg-VqK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slg-YQ-cJJ" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="1973"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bBX-lq-3on">
+            <objects>
+                <viewController id="Iee-DV-rKa" customClass="ViewController" customModule="MoonAnimationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C05-Gi-yIP"/>
+                        <viewControllerLayoutGuide type="bottom" id="kZ0-Au-cFy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eIV-AJ-eY9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HmT-ea-LL8" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="274" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="nXa-sf-O8f"/>
+                                    <constraint firstAttribute="width" constant="53" id="t0R-8x-bHW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.86436301469999999" green="0.82138270140000003" blue="0.69867110249999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillBackgroundColor">
+                                        <color key="value" red="0.35648941989999999" green="0.62535011770000004" blue="0.6433523297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2q-2c-QAd" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="171" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="YeY-7e-vJu"/>
+                                    <constraint firstAttribute="width" constant="53" id="z79-zG-79D"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.98048597569999996" green="0.4918122888" blue="0.47019100190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillBackgroundColor">
+                                        <color key="value" red="0.98661953209999997" green="0.72013431790000004" blue="0.48146158459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-cx-bAy" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="377" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="IH7-fh-Qe1"/>
+                                    <constraint firstAttribute="height" constant="52" id="YBl-hN-kuk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" red="0.69522386790000001" green="0.32908150549999998" blue="0.45562982559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillBackgroundColor">
+                                        <color key="value" red="0.98048597569999996" green="0.4918122888" blue="0.47019100190000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="HmT-ea-LL8" secondAttribute="centerY" id="Tsx-AG-Wt5"/>
+                            <constraint firstItem="lKB-cx-bAy" firstAttribute="leading" secondItem="HmT-ea-LL8" secondAttribute="trailing" constant="50" id="Vi0-eD-bDA"/>
+                            <constraint firstItem="HmT-ea-LL8" firstAttribute="centerY" secondItem="lKB-cx-bAy" secondAttribute="centerY" id="ciw-YB-VWP"/>
+                            <constraint firstItem="HmT-ea-LL8" firstAttribute="leading" secondItem="X2q-2c-QAd" secondAttribute="trailing" constant="50" id="dQE-jh-cJo"/>
+                            <constraint firstAttribute="centerX" secondItem="HmT-ea-LL8" secondAttribute="centerX" constant="-0.5" id="rM2-Rh-4O8"/>
+                            <constraint firstItem="X2q-2c-QAd" firstAttribute="centerY" secondItem="HmT-ea-LL8" secondAttribute="centerY" id="vJr-Qm-gt6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dv-BX-nqn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="1264"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I39-Sj-5b6">
+            <objects>
+                <viewController id="gDp-ee-CPF" customClass="ViewController" customModule="MoonAnimationProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aZm-hr-nC2"/>
+                        <viewControllerLayoutGuide type="bottom" id="UyO-UZ-x6A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b8z-Gr-1lk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6AM-GO-UX6" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="274" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="H8b-P4-mqM"/>
+                                    <constraint firstAttribute="height" constant="52" id="ZUA-Td-4jc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tyz-0n-U6j" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="171" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="Jau-Bw-Rz2"/>
+                                    <constraint firstAttribute="height" constant="52" id="qtw-DA-Idy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfj-7u-Hs0" customClass="MoonActivityIndicator" customModule="MoonAnimationProject" customModuleProvider="target">
+                                <rect key="frame" x="377" y="274" width="53" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="f5U-If-cIp"/>
+                                    <constraint firstAttribute="height" constant="52" id="lpT-wk-oJT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="animating" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationCycleDuration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lfj-7u-Hs0" firstAttribute="leading" secondItem="6AM-GO-UX6" secondAttribute="trailing" constant="50" id="BPf-Id-jfZ"/>
+                            <constraint firstItem="6AM-GO-UX6" firstAttribute="centerY" secondItem="lfj-7u-Hs0" secondAttribute="centerY" id="C1a-B0-aD3"/>
+                            <constraint firstAttribute="centerX" secondItem="6AM-GO-UX6" secondAttribute="centerX" constant="-0.5" id="Gqb-mx-bCG"/>
+                            <constraint firstAttribute="centerY" secondItem="6AM-GO-UX6" secondAttribute="centerY" id="i1Q-n1-AUH"/>
+                            <constraint firstItem="Tyz-0n-U6j" firstAttribute="centerY" secondItem="6AM-GO-UX6" secondAttribute="centerY" id="jur-b4-NW5"/>
+                            <constraint firstItem="6AM-GO-UX6" firstAttribute="leading" secondItem="Tyz-0n-U6j" secondAttribute="trailing" constant="50" id="ztV-3T-iin"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovn-tQ-GX1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="2656"/>
         </scene>
     </scenes>
 </document>
