@@ -2,7 +2,7 @@
 
 An alternative to UIActivityIndicator.
 
-Gif
+<img src="Screenshots/Moon.gif" width="345px" />
 
 Adjustable color
 ```
