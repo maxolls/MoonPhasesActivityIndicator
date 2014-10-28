@@ -29,4 +29,5 @@ var angle:CGFloat
 <img src="Screenshots/MoonAngle.gif" width="320px"/>
 
 These properties are all @IBInspectable
+
 <img src="Screenshots/xcode.png" width="320px"/>
