@@ -159,14 +159,17 @@
 		751F52B419FDF29A000F4EC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = MaximeOllivier;
 				TargetAttributes = {
 					751F52BB19FDF29A000F4EC7 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 1020;
 					};
 					751F52D019FDF29A000F4EC7 = {
 						CreatedOnToolsVersion = 6.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 751F52BB19FDF29A000F4EC7;
 					};
 				};
@@ -343,6 +346,7 @@
 				INFOPLIST_FILE = MoonAnimationProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -353,6 +357,7 @@
 				INFOPLIST_FILE = MoonAnimationProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -372,6 +377,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoonAnimationProject.app/MoonAnimationProject";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -387,6 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoonAnimationProject.app/MoonAnimationProject";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
