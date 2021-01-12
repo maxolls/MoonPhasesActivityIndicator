@@ -13,10 +13,10 @@ class MoonActivityIndicator: UIView {
     
     //Parameters
     @IBInspectable var animationCycleDuration:Double = 2.0
-    @IBInspectable var fillColor:UIColor = UIColor.blackColor()
-    @IBInspectable var fillBackgroundColor:UIColor = UIColor.clearColor() {
+    @IBInspectable var fillColor:UIColor = UIColor.black
+    @IBInspectable var fillBackgroundColor:UIColor = UIColor.clear {
         didSet{
-            backgroundLayer?.fillColor = fillBackgroundColor.CGColor
+            backgroundLayer?.fillColor = fillBackgroundColor.cgColor
         }
     }
     @IBInspectable var animating:Bool = false {
@@ -32,7 +32,7 @@ class MoonActivityIndicator: UIView {
     }
     @IBInspectable var angle:CGFloat = 0.0 {
         didSet {
-            pathLayer?.setAffineTransform(CGAffineTransformMakeRotation(angle))
+            pathLayer?.setAffineTransform(CGAffineTransform(rotationAngle: angle))
         }
     }
     
@@ -55,29 +55,29 @@ class MoonActivityIndicator: UIView {
             backgroundLayer = CAShapeLayer()
             backgroundLayer?.frame = layer.bounds
             backgroundLayer?.path = contourPath()
-            backgroundLayer?.fillColor = fillBackgroundColor.CGColor
-            layer.addSublayer(backgroundLayer)
+            backgroundLayer?.fillColor = fillBackgroundColor.cgColor
+            layer.addSublayer(backgroundLayer!)
         }
         
         if pathLayer == nil {
             pathLayer = CAShapeLayer()
             pathLayer?.frame = layer.bounds
             pathLayer?.lineWidth = 0
-            pathLayer?.setAffineTransform(CGAffineTransformMakeRotation(angle))
+            pathLayer?.setAffineTransform(CGAffineTransform(rotationAngle: angle))
             cleanLayers()
-            layer.addSublayer(pathLayer)
+            layer.addSublayer(pathLayer!)
         }
     }
     
     private func cleanLayers() {
-        pathLayer?.path = pathAtInterval(0)
-        pathLayer?.fillColor = UIColor.clearColor().CGColor
+        pathLayer?.path = pathAtInterval(interval: 0)
+        pathLayer?.fillColor = UIColor.clear.cgColor
     }
     
     // Color
     
-    private func fillColorWithInterval(interval:NSTimeInterval) -> CGColorRef {
-        let cycleInterval = CGFloat(interval.remainingAfterMultiple(animationCycleDuration))
+    private func fillColorWithInterval(interval:TimeInterval) -> CGColor {
+        let cycleInterval = CGFloat(interval.remainingAfterMultiple(multiple: animationCycleDuration))
         let halfAnimationDuration = CGFloat(animationCycleDuration / 2.0)
         
         let lowerInterval:CGFloat = halfAnimationDuration * 0.5
@@ -86,27 +86,27 @@ class MoonActivityIndicator: UIView {
         if cycleInterval < lowerInterval {
             
             let progress:CGFloat = cycleInterval / lowerInterval
-            return fillColor.colorWithAlphaComponent(progress).CGColor
+            return fillColor.withAlphaComponent(progress).cgColor
             
         } else if cycleInterval > higherInterval {
             
             let progress:CGFloat = (cycleInterval - higherInterval) / lowerInterval
-            return fillColor.colorWithAlphaComponent(1-progress).CGColor
+            return fillColor.withAlphaComponent(1-progress).cgColor
             
         } else {
-            return fillColor.CGColor
+            return fillColor.cgColor
         }
     }
     
     // Path
     
     private func contourPath() -> CGPath {
-        return UIBezierPath(ovalInRect: layer.bounds).CGPath
+        return UIBezierPath(ovalIn: layer.bounds).cgPath
     }
     
-    private func pathAtInterval(interval:NSTimeInterval) -> CGPathRef {
-        var cycleInterval = CGFloat(interval.remainingAfterMultiple(animationCycleDuration))
-        cycleInterval = LogisticCurve.calculateYWithX(cycleInterval,
+    private func pathAtInterval(interval:TimeInterval) -> CGPath {
+        var cycleInterval = CGFloat(interval.remainingAfterMultiple(multiple: animationCycleDuration))
+        cycleInterval = LogisticCurve.calculateYWithX(x: cycleInterval,
             upperX: CGFloat(animationCycleDuration),
             upperY: CGFloat(animationCycleDuration))
         
@@ -117,11 +117,11 @@ class MoonActivityIndicator: UIView {
         let halfAnimationDuration = CGFloat(animationCycleDuration) / 2.0
         let isFirstHalfOfAnimation = cycleInterval < halfAnimationDuration
         
-        aPath.moveToPoint(CGPointMake(length, halfLength))
-        aPath.addArcWithCenter(CGPointMake(halfLength, halfLength),
+        aPath.move(to: CGPoint(x: length, y: halfLength))
+        aPath.addArc(withCenter: CGPoint(x: halfLength,y: halfLength),
             radius: halfLength,
-            startAngle: -CGFloat(M_PI)/2.0,
-            endAngle: CGFloat(M_PI)/2.0,
+            startAngle: -CGFloat(Double.pi)/2.0,
+            endAngle: CGFloat(Double.pi)/2.0,
             clockwise: isFirstHalfOfAnimation)
         
         let x:CGFloat = length * 0.6667
@@ -133,20 +133,20 @@ class MoonActivityIndicator: UIView {
         }
         let controlPointXDistance:CGFloat = halfLength + t * x
         
-        aPath.addCurveToPoint(CGPointMake(halfLength, 0),
-            controlPoint1: CGPointMake(controlPointXDistance, length - 0.05*length),
-            controlPoint2: CGPointMake(controlPointXDistance, 0.05*length))
-        aPath.closePath()
+        aPath.addCurve(to: CGPoint(x: halfLength, y: 0),
+                       controlPoint1: CGPoint(x: controlPointXDistance, y: length - 0.05*length),
+                       controlPoint2: CGPoint(x: controlPointXDistance, y: 0.05*length))
+        aPath.close()
         
-        return aPath.CGPath
+        return aPath.cgPath
     }
     
     // Animation
     
     private func startAnimation() {
-        displayLink = CADisplayLink(target: self, selector: "handleDisplayLink:")
-        displayLink?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        hidden = false
+        displayLink = CADisplayLink(target: self, selector: #selector(handleDisplayLink(displayLink:)))
+        displayLink?.add(to: RunLoop.current, forMode: .default)
+        isHidden = false
     }
     
     private func stopAnimation() {
@@ -155,18 +155,18 @@ class MoonActivityIndicator: UIView {
         cleanLayers()
     }
     
-    func handleDisplayLink(displayLink:CADisplayLink) {
+    @objc func handleDisplayLink(displayLink: CADisplayLink) {
         if firstTimeStamp == nil {
             firstTimeStamp =  displayLink.timestamp
         }
         
         let elapse = displayLink.timestamp - firstTimeStamp!
-        updatePathLayer(elapse)
+        updatePathLayer(interval: elapse)
     }
     
-    private func updatePathLayer(interval:NSTimeInterval) {
-        pathLayer?.path = pathAtInterval(interval)
-        pathLayer?.fillColor = fillColorWithInterval(interval)
+    private func updatePathLayer(interval: TimeInterval) {
+        pathLayer?.path = pathAtInterval(interval: interval)
+        pathLayer?.fillColor = fillColorWithInterval(interval: interval)
     }
     
     // Interface builder
@@ -174,7 +174,7 @@ class MoonActivityIndicator: UIView {
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setUpLayer()
-        updatePathLayer(animationCycleDuration * 0.35)
+        updatePathLayer(interval: animationCycleDuration * 0.35)
         
     }
     
@@ -182,12 +182,12 @@ class MoonActivityIndicator: UIView {
 
 private extension CGRect {
     func center() -> CGPoint {
-        return CGPointMake(origin.x + size.width/2.0, origin.y + size.height/2.0)
+        return CGPoint(x:origin.x + size.width/2.0, y: origin.y + size.height/2.0)
     }
 }
 
 private extension Double {
-    func remainingAfterMultiple(multiple:NSTimeInterval) -> NSTimeInterval {
+    func remainingAfterMultiple(multiple:TimeInterval) -> TimeInterval {
         return self - multiple * floor(self/multiple)
     }
 }
